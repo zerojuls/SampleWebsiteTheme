@@ -1,0 +1,31 @@
+﻿<style>
+    .login-theme-signin__hidden {
+        display: none;
+    }
+</style>
+
+<form on-submit="preventSubmit" class="login-theme-signin">
+    <div>
+        <content select="[slot='SignIn/message']"></content>
+    </div>
+    <div class="login-theme-signin__username">
+        <content select="[slot='SignIn/username-input']"></content>
+    </div>
+    <content select="[slot='SignIn/password-input']"></content>
+
+    <div class="checkbox">
+        <label>
+            <content select="[slot='SignIn/rememberme-checkbox']"></content>
+            <content select="[slot='SignIn/rememberme-label']"></content>
+        </label>
+    </div>
+    <content select="[slot='SignIn/submit-button']"></content>
+    <content select="[slot='SignIn/forgot-button']"></content>
+    <content select="[slot='SignIn/signin-element']"></content>
+</form>
+
+<div class="login-theme-signin__hidden">
+    <content select="[slot='SignIn/header']"></content>
+    <content select="[slot='SignIn/password-label']">
+    </content><content select="[slot='SignIn/username-label']"></content>
+</div>

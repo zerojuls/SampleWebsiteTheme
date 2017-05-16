@@ -1,0 +1,19 @@
+<template>
+    <style>
+        .samplewebsitetheme-logo-img {
+            height: 100%;
+        }
+    </style>
+    <img class="samplewebsitetheme-logo-img" slot="samplewebsitetheme/logo-img" src="/samplewebsitetheme/img/logo.png">
+
+    <template is="declarative-shadow-dom">
+        <style>
+            .logo-holder {
+                height: 50px;
+            }
+        </style>
+        <div class="logo-holder">
+            <slot name="samplewebsitetheme/logo-img"></slot>
+        </div>
+    </template>
+</template>

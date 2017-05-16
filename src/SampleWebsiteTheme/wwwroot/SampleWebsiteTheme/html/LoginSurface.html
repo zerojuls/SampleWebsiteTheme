@@ -1,0 +1,50 @@
+﻿
+<link rel="import" href="/sys/polymer/polymer.html" />
+
+<template>
+    <style slot="samplewebsitetheme/global-style" shim-shadowdom>
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: "Helvetica", "Arial", sans-serif;
+        }
+
+        .btn-primary {
+            background-color: #0563B8;
+        }
+    </style>
+    <template is="dom-bind">
+        <starcounter-include slot="samplewebsitetheme/signin" partial="{{model.Sections.SignIn}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/logo" partial="{{model.Sections.Logo}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/footer" partial="{{model.Sections.Footer}}"></starcounter-include>
+    </template>
+    <template is="starcounter-composition">
+        <content select="[slot='samplewebsitetheme/global-style']"></content>
+        <style shim-shadowdom>
+            .login-theme {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                color: #eae9e5;
+            }
+
+            .login-theme__logo { margin: auto; }
+
+            .login-theme__logo img { width: 50%; }
+
+            .login-theme__logo span { font-size: 1.2em; }
+   
+        </style>
+        <div class="login-theme">
+            <div class="login-theme__logo">
+                <content select="[slot='samplewebsitetheme/logo']"></content>
+            </div>
+            <div class="login-theme__signin">
+                <content select="[slot='samplewebsitetheme/signin']"></content>
+            </div>
+            <div class="login-theme__footer">
+                <content select="[slot='samplewebsitetheme/footer']"></content>
+            </div>
+        </div>
+    </template>
+</template>
