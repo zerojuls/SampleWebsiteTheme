@@ -52,4 +52,6 @@ To change the logo, you need to run go to the Images list [http://localhost:8080
 
 ![Desktop Suface](./docs/desktop-surface.png)
 
+![Desktop Suface expanded Launchpad](./docs/desktop-surface-launchpad.png)
+
 ![Login Surface](./docs/login-surface.png)
