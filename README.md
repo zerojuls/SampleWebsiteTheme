@@ -14,12 +14,12 @@ call images\run.bat
 
 # Required versions of other apps
 
-As of Apr 21, 2017:
+As of 17 May 2017:
 
-https://github.com/StarcounterApps/SignIn/tree/develop  
 https://github.com/StarcounterApps/Website/tree/develop  
-https://github.com/StarcounterApps/Launchpad/tree/fix-auto-uris (https://github.com/StarcounterApps/Launchpad/tree/fix-auto-uris) 
-https://github.com/StarcounterApps/Images/tree/center-image (https://github.com/StarcounterApps/Images/pull/94)
+https://github.com/StarcounterApps/SignIn/tree/develop  
+https://github.com/StarcounterApps/Launchpad/tree/develop  
+https://github.com/StarcounterApps/Images/tree/develop
 
 # How the logo is maintained
 
