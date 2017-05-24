@@ -38,7 +38,7 @@ call launchpad\run.bat
 call images\run.bat
 ```
 
-# How the logo is maintained
+## How the logo is maintained
 
 The logo in the Desktop Surface comes from the Images app.
 
@@ -47,3 +47,9 @@ Desktop Surface is configured to create the data for it (`Content`, `Illustratio
 To display the logo, the partial view `/images/partials/somethings-single-static/{Something ObjectID}` from the Images app is pinned to the "Logo" blending point of the Desktop Surface.
 
 To change the logo, you need to run go to the Images list [http://localhost:8080/images](http://localhost:8080/images), click the "Edit" button next to the current logo image and upload a new image. Then reload the page.
+
+## Screenshots
+
+![Desktop Suface](./docs/desktop-surface.png)
+
+![Login Surface](./docs/login-surface.png)
