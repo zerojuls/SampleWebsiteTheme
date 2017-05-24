@@ -11,10 +11,13 @@ The configuration consists of the following things:
 1. Desktop Surface:
     - There is a menu button in the top left corner. Clicking on it shows the response from the [Launchpad](https://github.com/StarcounterApps/Launchpad) app, if that app is running.
     - There is a logo in the top bar. The logo comes from the [Images](https://github.com/StarcounterApps/Images) app, if that app is running. More info about the logo [below](#How-the-logo-is-maintained).
-2. Mobile Surface:
-    - Similar to Desktop but optimized for mobile devices
-3. Sign In Surface:
+2. Login Surface:
     - Automatically presented when the user is not signed in. Shows the response from the [Sign In](https://github.com/StarcounterApps/SignIn) app, if that app is running.
+
+Planned additional surface:
+
+3. Mobile Surface:
+    - Similar to Desktop but optimized for mobile devices
 
 ## Setup
 
