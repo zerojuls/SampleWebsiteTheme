@@ -41,7 +41,7 @@ namespace SampleWebsiteTheme.Api
 
         private static void CreateLoginLayout()
         {
-            WebTemplate loginSurface = CreateSurface("LoginThemeSurface", "LoginSurface");
+            WebTemplate loginSurface = CreateSurface("LoginSurface", "LoginSurface");
 
             CreateCatchUri(loginSurface, "/signin/signinuser");
             WebSection logoBp = CreateBlendingPoint(loginSurface, "Logo");
@@ -66,7 +66,7 @@ namespace SampleWebsiteTheme.Api
 
         private static void CreateDesktopLayout()
         {
-            WebTemplate desktopSurface = CreateSurface("DesktopThemeSurface", "DesktopSurface");
+            WebTemplate desktopSurface = CreateSurface("DesktopSurface", "DesktopSurface");
 
             CreateCatchUri(desktopSurface, null);
 
