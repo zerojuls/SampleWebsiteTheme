@@ -106,6 +106,7 @@ namespace SampleWebsiteTheme.Api
                 };
             }
 
+            CreatePinningRule(searchBlendingPoint, "/search");
             CreatePinningRule(logoBlendingPoint, $"/images/partials/somethings-single-static/{concept.GetObjectID()}");
             CreatePinningRule(appTitleBlendingPoint, "/DisplayAppTitle");
             CreatePinningRule(mainMenuBlendingPoint, "/Launchpad");
