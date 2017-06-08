@@ -72,6 +72,7 @@ namespace SampleWebsiteTheme.Api
 
             WebSection appTitleBlendingPoint = CreateBlendingPoint(desktopSurface, "AppTitle");
             WebSection mainMenuBlendingPoint = CreateBlendingPoint(desktopSurface, "MainMenu");
+            WebSection searchBlendingPoint = CreateBlendingPoint(desktopSurface, "Search");
             WebSection logoBlendingPoint = CreateBlendingPoint(desktopSurface, "Logo");
             WebSection topBarBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBar");
             CreateBlendingPoint(desktopSurface, "Main", isBlendingPointDefault: true);
