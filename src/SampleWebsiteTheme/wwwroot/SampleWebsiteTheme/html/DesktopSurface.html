@@ -132,7 +132,6 @@
                 align-items: center;
             }
 
-
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition > *,
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition starcounter-include > juicy-composition > *,
             /*
@@ -161,13 +160,7 @@
                 padding: 0;
             }
 
-            .desktop-theme__content {
-                display: flex;
-                flex: 1 1 auto;
-            }
-
             .desktop-theme__main {
-                flex: 1 0 auto;
                 background: var(--primary-background, white);
                 color: var(--primary-color, black);
             }
@@ -258,11 +251,9 @@
             <div class="desktop-theme__menu">
                 <slot name="samplewebsitetheme/mainmenu"></slot>
             </div>
-            <div class="desktop-theme__content">
-                <div class="desktop-theme__main">
-                    <div class="desktop-theme__padded">
-                        <slot name="samplewebsitetheme/main"></slot>
-                    </div>
+            <div class="desktop-theme__main">
+                <div class="desktop-theme__padded">
+                    <slot name="samplewebsitetheme/main"></slot>
                 </div>
             </div>
         </div>
