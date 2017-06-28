@@ -18,11 +18,10 @@
     </style>
     <template is="dom-bind">
         <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon" on-click="toggleMenu"></i>
-        <starcounter-include slot="samplewebsitetheme/mainmenu" partial="{{model.Sections.MainMenu}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/app-title" partial="{{model.Sections.AppTitle}}"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/search" partial="{{model.Sections.Search}}"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/logo" partial="{{model.Sections.Logo}}"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/topbar" partial="{{model.Sections.TopBar}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-leftcorner" partial="{{model.Sections.TopBarLeftCorner}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-left" partial="{{model.Sections.TopBarLeft}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-right" partial="{{model.Sections.TopBarRight}}"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/main" partial="{{model.Sections.Main}}"></starcounter-include>
     </template>
     <script>
@@ -85,12 +84,6 @@
                 height: 100%;
             }
 
-            .desktop-theme__top-left__padded {
-                padding-left: 20px;
-                padding-right: 20px;
-                height: 50px;
-            }
-
             .desktop-theme__top-left,
             .desktop-theme__top-right {
                 flex: 1 0 auto;
@@ -125,6 +118,8 @@
             /** For browsers that supports Shadow DOM v0 */
             .desktop-theme__top-leftmost ::content > starcounter-include > juicy-composition,
             .desktop-theme__top-leftmost ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
+            .desktop-theme__top-center ::content > starcounter-include > juicy-composition,
+            .desktop-theme__top-center ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition,
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition {
                 display: flex;
@@ -133,6 +128,8 @@
             /** duplicated rule for polyfilled browsers */
             .desktop-theme__top-leftmost > starcounter-include > juicy-composition,
             .desktop-theme__top-leftmost > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
+            .desktop-theme__top-center > starcounter-include > juicy-composition,
+            .desktop-theme__top-center > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
             .desktop-theme__top-right > starcounter-include > juicy-composition,
             .desktop-theme__top-right > starcounter-include > juicy-composition > starcounter-include > juicy-composition {
                 display: flex;
@@ -245,21 +242,18 @@
                 </div>
                 <div class="desktop-theme__top-main">
                     <div class="desktop-theme__top-left">
-                        <slot name="samplewebsitetheme/app-title"></slot>
-                    </div>
-                    <div class="desktop-theme__top-left__padded">
-                        <slot name="samplewebsitetheme/search"></slot>
+                        <slot name="samplewebsitetheme/topbar-left"></slot>
                     </div>
                     <div class="desktop-theme__top-center">
-                        <slot name="samplewebsitetheme/logo"></slot>
+                        <slot name="samplewebsitetheme/topbar-center"></slot>
                     </div>
                     <div class="desktop-theme__top-right">
-                        <slot name="samplewebsitetheme/topbar"></slot>
+                        <slot name="samplewebsitetheme/topbar-right"></slot>
                     </div>
                 </div>
             </div>
             <div class="desktop-theme__menu">
-                <slot name="samplewebsitetheme/mainmenu"></slot>
+                <slot name="samplewebsitetheme/topbar-leftcorner"></slot>
             </div>
             <div class="desktop-theme__main">
                 <div class="desktop-theme__padded">

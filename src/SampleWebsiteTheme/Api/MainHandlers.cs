@@ -70,11 +70,10 @@ namespace SampleWebsiteTheme.Api
 
             CreateCatchUri(desktopSurface, null);
 
-            WebSection appTitleBlendingPoint = CreateBlendingPoint(desktopSurface, "AppTitle");
-            WebSection mainMenuBlendingPoint = CreateBlendingPoint(desktopSurface, "MainMenu");
-            WebSection searchBlendingPoint = CreateBlendingPoint(desktopSurface, "Search");
-            WebSection logoBlendingPoint = CreateBlendingPoint(desktopSurface, "Logo");
-            WebSection topBarBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBar");
+            WebSection topBarLeftBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBarLeft");
+            WebSection topBarLeftCornerBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBarLeftCorner");
+            WebSection topBarCenterBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBarCenter");
+            WebSection topBarRightBlendingPoint = CreateBlendingPoint(desktopSurface, "TopBarRight");
             CreateBlendingPoint(desktopSurface, "Main", isBlendingPointDefault: true);
 
             var content = Db.SQL<Content>($"SELECT c FROM {typeof(Content).FullName} c WHERE {nameof(Content.URL)} = ?", DefaultSystemLogoContentUrl).First;
@@ -106,11 +105,11 @@ namespace SampleWebsiteTheme.Api
                 };
             }
 
-            CreatePinningRule(searchBlendingPoint, "/search");
-            CreatePinningRule(logoBlendingPoint, $"/images/partials/somethings-single-static/{concept.GetObjectID()}");
-            CreatePinningRule(appTitleBlendingPoint, "/DisplayAppTitle");
-            CreatePinningRule(mainMenuBlendingPoint, "/Launchpad");
-            CreatePinningRule(topBarBlendingPoint, "/signin/user");
+            CreatePinningRule(topBarCenterBlendingPoint, "/Search");
+            CreatePinningRule(topBarCenterBlendingPoint, $"/images/partials/somethings-single-static/{concept.GetObjectID()}");
+            CreatePinningRule(topBarLeftBlendingPoint, "/DisplayAppTitle");
+            CreatePinningRule(topBarLeftCornerBlendingPoint, "/Launchpad");
+            CreatePinningRule(topBarRightBlendingPoint, "/signin/user");
         }
 
         private static WebTemplate CreateSurface(string surfaceName, string templateFileName)
