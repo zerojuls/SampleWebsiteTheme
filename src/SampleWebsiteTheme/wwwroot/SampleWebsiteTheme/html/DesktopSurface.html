@@ -65,8 +65,8 @@
                 line-height: normal;
                 /*reset bootstrap line-height*/
                 height: 64px;
-                background-color: rgb(33, 150, 243);
-                color: whitesmoke;
+                background: var(--secondary-background, rgb(33, 150, 243));
+                color: var(--secondary-color, whitesmoke);
             }
 
             .desktop-theme__top-main {
@@ -99,12 +99,12 @@
 
             /** For browsers that supports Shadow DOM v0 */
             .desktop-theme__top ::content a {
-                color: var(--secondary-color, #8a98b0);
+                color: var(--secondary-color, whitesmoke);
             }
 
             /** duplicated rule for polyfilled browsers */
             .desktop-theme__top a {
-                color: var(--secondary-color, #8a98b0);
+                color: var(--secondary-color, whitesmoke);
             }
 
             .desktop-theme__top-leftmost,
