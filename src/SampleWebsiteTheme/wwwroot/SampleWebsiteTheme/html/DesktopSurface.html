@@ -15,12 +15,17 @@
         .desktop-theme-button__icon {
             cursor: pointer;
         }
+
+        .desktop-theme__top-center > juicy-composition > starcounter-include,
+        .desktop-theme__top-center > juicy-composition > starcounter-include > juicy-composition {
+            display: flex;
+        }
     </style>
     <template is="dom-bind">
         <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon" on-click="toggleMenu"></i>
         <starcounter-include slot="samplewebsitetheme/topbar-leftcorner" partial="{{model.Sections.TopBarLeftCorner}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/topbar-left" partial="{{model.Sections.TopBarLeft}}"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}" class="desktop-theme__top-center"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/topbar-right" partial="{{model.Sections.TopBarRight}}"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/main" partial="{{model.Sections.Main}}"></starcounter-include>
     </template>
@@ -47,7 +52,7 @@
         })();
     </script>
     <template is="declarative-shadow-dom">
-        <content select="[slot='samplewebsitetheme/global-style']"></content>
+        <slot name="samplewebsitetheme/global-style"></slot>
         <style shim-shadowdom>
             .desktop-theme {
                 display: flex;
@@ -118,8 +123,6 @@
             /** For browsers that supports Shadow DOM v0 */
             .desktop-theme__top-leftmost ::content > starcounter-include > juicy-composition,
             .desktop-theme__top-leftmost ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
-            .desktop-theme__top-center ::content > starcounter-include > juicy-composition,
-            .desktop-theme__top-center ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition,
             .desktop-theme__top-right ::content > starcounter-include > juicy-composition > starcounter-include > juicy-composition {
                 display: flex;
@@ -128,8 +131,6 @@
             /** duplicated rule for polyfilled browsers */
             .desktop-theme__top-leftmost > starcounter-include > juicy-composition,
             .desktop-theme__top-leftmost > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
-            .desktop-theme__top-center > starcounter-include > juicy-composition,
-            .desktop-theme__top-center > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
             .desktop-theme__top-right > starcounter-include > juicy-composition,
             .desktop-theme__top-right > starcounter-include > juicy-composition > starcounter-include > juicy-composition {
                 display: flex;
