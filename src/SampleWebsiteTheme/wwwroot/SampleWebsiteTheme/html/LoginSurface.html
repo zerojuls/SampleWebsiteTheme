@@ -19,7 +19,7 @@
         <starcounter-include slot="samplewebsitetheme/footer" partial="{{model.Sections.Footer}}"></starcounter-include>
     </template>
     <template is="starcounter-composition">
-        <content select="[slot='samplewebsitetheme/global-style']"></content>
+		<slot name="samplewebsitetheme/global-style"></slot>
         <style shim-shadowdom>
             .login-theme {
                 display: flex;
@@ -37,13 +37,13 @@
         </style>
         <div class="login-theme">
             <div class="login-theme__logo">
-                <content select="[slot='samplewebsitetheme/logo']"></content>
+                <slot name="samplewebsitetheme/logo"></slot>
             </div>
             <div class="login-theme__signin">
-                <content select="[slot='samplewebsitetheme/signin']"></content>
+                <slot name="samplewebsitetheme/signin"></slot>
             </div>
             <div class="login-theme__footer">
-                <content select="[slot='samplewebsitetheme/footer']"></content>
+                <slot name="samplewebsitetheme/footer"></slot>
             </div>
         </div>
     </template>

@@ -6,26 +6,26 @@
 
 <form on-submit="preventSubmit" class="login-theme-signin">
     <div>
-        <content select="[slot='SignIn/message']"></content>
+        <slot name="SignIn/message"></slot>
     </div>
     <div class="login-theme-signin__username">
-        <content select="[slot='SignIn/username-input']"></content>
+        <slot name="SignIn/username-input"></slot>
     </div>
-    <content select="[slot='SignIn/password-input']"></content>
+    <slot name="SignIn/password-input"></slot>
 
     <div class="checkbox">
         <label>
-            <content select="[slot='SignIn/rememberme-checkbox']"></content>
-            <content select="[slot='SignIn/rememberme-label']"></content>
+            <slot name="SignIn/rememberme-checkbox"></slot>
+            <slot name="SignIn/rememberme-label"></slot>
         </label>
     </div>
-    <content select="[slot='SignIn/submit-button']"></content>
-    <content select="[slot='SignIn/forgot-button']"></content>
-    <content select="[slot='SignIn/signin-element']"></content>
+    <slot name="SignIn/submit-button"></slot>
+    <slot name="SignIn/forgot-button"></slot>
+    <slot name="SignIn/signin-element"></slot>
 </form>
 
 <div class="login-theme-signin__hidden">
-    <content select="[slot='SignIn/header']"></content>
-    <content select="[slot='SignIn/password-label']">
-    </content><content select="[slot='SignIn/username-label']"></content>
+    <slot name="SignIn/header"></slot>
+    <slot name="SignIn/password-label"></slot>
+    <slot name="SignIn/username-label"></slot>
 </div>
