@@ -44,6 +44,7 @@ namespace SampleWebsiteTheme.Api
             WebTemplate loginSurface = CreateSurface("LoginSurface", "LoginSurface");
 
             CreateCatchUri(loginSurface, "/signin/signinuser");
+            CreateCatchUri(loginSurface, "/signin/signinuser?{?}");
             WebSection logoBp = CreateBlendingPoint(loginSurface, "Logo");
             WebSection footerBp = CreateBlendingPoint(loginSurface, "Footer");
             CreateBlendingPoint(loginSurface, "SignIn", isBlendingPointDefault: true);
