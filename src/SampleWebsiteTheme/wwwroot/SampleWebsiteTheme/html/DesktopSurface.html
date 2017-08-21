@@ -105,7 +105,7 @@
             }
 
 
-            .desktop-theme__top ::slotted a {
+            .desktop-theme__top ::slotted(a) {
                 color: var(--secondary-color, whitesmoke);
             }
 
@@ -123,10 +123,10 @@
             }
 
 
-            .desktop-theme__top-leftmost ::slotted > starcounter-include > juicy-composition,
-            .desktop-theme__top-leftmost ::slotted > starcounter-include > juicy-composition > starcounter-include > juicy-composition,
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition,
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition > starcounter-include > juicy-composition {
+            .desktop-theme__top-leftmost ::slotted(starcounter-include > juicy-composition),
+            .desktop-theme__top-leftmost ::slotted(starcounter-include > juicy-composition > starcounter-include > juicy-composition),
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition),
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition > starcounter-include > juicy-composition) {
                 display: flex;
                 align-items: center;
             }
@@ -139,14 +139,14 @@
                 align-items: center;
             }
 
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition > *,
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition starcounter-include > juicy-composition > *,
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition > *),
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition starcounter-include > juicy-composition > *),
             /*
                 Shadow DOM v1 in-compatible Shadow DOM piercing selector
                 styling such things may break default compositions delivered by apps
             */
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition::shadow > *,
-            .desktop-theme__top-right ::slotted > starcounter-include > juicy-composition > starcounter-include > juicy-composition::shadow > * {
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition::shadow > *),
+            .desktop-theme__top-right ::slotted(starcounter-include > juicy-composition > starcounter-include > juicy-composition::shadow > *) {
                 margin-right: 5px;
             }
             /** duplicated rule for polyfilled browsers */
@@ -155,7 +155,7 @@
                 margin-right: 5px;
             }
 
-            .desktop-theme__top-right ::slotted paper-icon-button {
+            .desktop-theme__top-right ::slotted(paper-icon-button) {
                 width: 24px;
                 height: 24px;
                 padding: 0;
