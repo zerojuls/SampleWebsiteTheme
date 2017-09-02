@@ -16,6 +16,13 @@
             cursor: pointer;
         }
 
+        .desktop-theme__top-leftmost-slotted a,
+        .desktop-theme__top-left-slotted a,
+        .desktop-theme__top-center-slotted a,
+        .desktop-theme__top-right-slotted a {
+            color: var(--secondary-color, whitesmoke);
+        }
+
         .desktop-theme__top-center-slotted > juicy-composition,
         .desktop-theme__top-center-slotted > juicy-composition > starcounter-include > juicy-composition {
             display: flex;
@@ -45,7 +52,7 @@
     </style>
     <template is="dom-bind">
         <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon desktop-theme__top-leftmost-slotted" on-click="toggleMenu"></i>
-        <starcounter-include slot="samplewebsitetheme/topbar-leftcorner" partial="{{model.Sections.TopBarLeftCorner}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-leftcorner" class="desktop-theme__top-left-slotted" partial="{{model.Sections.TopBarLeftCorner}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/topbar-left" partial="{{model.Sections.TopBarLeft}}"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}" class="desktop-theme__top-center-slotted"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/topbar-right" class="desktop-theme__top-right-slotted" partial="{{model.Sections.TopBarRight}}"></starcounter-include>
@@ -122,16 +129,6 @@
 
             .desktop-theme__top-center {
                 flex: 0 0 auto;
-            }
-
-
-            .desktop-theme__top ::slotted(a) {
-                color: var(--secondary-color, whitesmoke);
-            }
-
-            /** duplicated rule for polyfilled browsers */
-            .desktop-theme__top a {
-                color: var(--secondary-color, whitesmoke);
             }
 
             .desktop-theme__top-leftmost,
