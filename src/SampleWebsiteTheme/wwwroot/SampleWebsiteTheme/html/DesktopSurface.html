@@ -22,6 +22,10 @@
         .desktop-theme__top-right-slotted a {
             color: var(--secondary-color, whitesmoke);
         }
+        
+        .desktop-theme__top-right-slotted > * {
+            margin-right: 5px;
+        }
 
         .desktop-theme__top-right-slotted paper-icon-button {
             width: 100%;
@@ -144,16 +148,6 @@
             .desktop-theme__top-right > starcounter-include {
                 display: flex;
                 align-items: center;
-            }
-
-            .desktop-theme__top-right ::slotted(starcounter-include) {
-                margin-right: 5px;
-            }
-
-            /** duplicated rule for polyfilled browsers */
-
-            .desktop-theme__top-right > starcounter-include {
-                margin-right: 5px;
             }
 
             .desktop-theme__main {
