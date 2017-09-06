@@ -16,29 +16,29 @@
             cursor: pointer;
         }
 
-        .desktop-theme__top-leftmost-slotted a,
-        .desktop-theme__top-left-slotted a,
-        .desktop-theme__top-center-slotted a,
-        .desktop-theme__top-right-slotted a {
+        .desktop-theme__top-leftmost a,
+        .desktop-theme__top-left a,
+        .desktop-theme__top-center a,
+        .desktop-theme__top-right a {
             color: var(--secondary-color, whitesmoke);
         }
         
-        .desktop-theme__top-right-slotted > * {
+        .desktop-theme__top-right > * {
             margin-right: 5px;
         }
 
-        .desktop-theme__top-right-slotted paper-icon-button {
+        .desktop-theme__top-right paper-icon-button {
             width: 100%;
             height: 100%;
             padding: 0;
         }
     </style>
     <template is="dom-bind">
-        <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon desktop-theme__top-leftmost-slotted" on-click="toggleMenu"></i>
+        <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon desktop-theme__top-leftmost" on-click="toggleMenu"></i>
         <starcounter-include slot="samplewebsitetheme/topbar-leftcorner" partial="{{model.Sections.TopBarLeftCorner}}" is-visible$="[[_showMainMenu]]" on-click="toggleMenu"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/topbar-left" class="desktop-theme__top-left-slotted" partial="{{model.Sections.TopBarLeft}}"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}" class="desktop-theme__top-center-slotted"></starcounter-include>
-        <starcounter-include slot="samplewebsitetheme/topbar-right" class="desktop-theme__top-right-slotted" partial="{{model.Sections.TopBarRight}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-left" class="desktop-theme__top-left" partial="{{model.Sections.TopBarLeft}}"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-center" partial="{{model.Sections.TopBarCenter}}" class="desktop-theme__top-center"></starcounter-include>
+        <starcounter-include slot="samplewebsitetheme/topbar-right" class="desktop-theme__top-right" partial="{{model.Sections.TopBarRight}}"></starcounter-include>
         <starcounter-include slot="samplewebsitetheme/main" partial="{{model.Sections.Main}}"></starcounter-include>
     </template>
     <script>
