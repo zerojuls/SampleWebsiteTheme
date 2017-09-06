@@ -23,26 +23,6 @@
             color: var(--secondary-color, whitesmoke);
         }
 
-        .desktop-theme__top-center-slotted > juicy-composition,
-        .desktop-theme__top-center-slotted > juicy-composition > starcounter-include > juicy-composition {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .desktop-theme__top-leftmost-slotted > juicy-composition,
-        .desktop-theme__top-leftmost-slotted > juicy-composition > starcounter-include > juicy-composition,
-        .desktop-theme__top-right-slotted > juicy-composition,
-        .desktop-theme__top-right-slotted > juicy-composition > starcounter-include > juicy-composition {
-            display: flex;
-            align-items: center;
-        }
-
-        .desktop-theme__top-right-slotted > juicy-composition > *,
-        .desktop-theme__top-right-slotted > juicy-composition starcounter-include > juicy-composition > * {
-            margin-right: 5px;
-        }
-
         .desktop-theme__top-right-slotted paper-icon-button {
             width: 100%;
             height: 100%;
@@ -136,6 +116,44 @@
             .desktop-theme__top-right {
                 display: flex;
                 align-items: center;
+            }
+
+            .desktop-theme__top-center ::slotted(starcounter-include) {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+                        
+            /** duplicated rule for polyfilled browsers */
+
+            .desktop-theme__top-center > starcounter-include {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .desktop-theme__top-leftmost ::slotted(i),
+            .desktop-theme__top-right ::slotted(starcounter-include) {
+                display: flex;
+                align-items: center;
+            }
+
+            /** duplicated rule for polyfilled browsers */
+
+            .desktop-theme__top-leftmost > i,
+            .desktop-theme__top-right > starcounter-include {
+                display: flex;
+                align-items: center;
+            }
+
+            .desktop-theme__top-right ::slotted(starcounter-include) {
+                margin-right: 5px;
+            }
+
+            /** duplicated rule for polyfilled browsers */
+
+            .desktop-theme__top-right > starcounter-include {
+                margin-right: 5px;
             }
 
             .desktop-theme__main {
