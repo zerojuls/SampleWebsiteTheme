@@ -32,6 +32,12 @@
             height: 100%;
             padding: 0;
         }
+
+        .desktop-theme__top-center ::slotted(starcounter-include) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;   
+        }
     </style>
     <template is="dom-bind">
         <i slot="samplewebsitetheme/menu-button" class="glyphicon glyphicon-menu-hamburger desktop-theme-button__icon desktop-theme__top-leftmost" on-click="toggleMenu"></i>
