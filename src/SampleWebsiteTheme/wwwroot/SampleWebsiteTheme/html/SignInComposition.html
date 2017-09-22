@@ -1,4 +1,10 @@
 ﻿<style>
+    /*
+        This is needed for Shadow DOM translated to V0
+        In V1 we could just not add named slots, for elements with slot attribute,
+        to hide them / not distribute them within default slot.
+        TODO(tomalec): to be removed in V1
+    */
     .login-theme-signin__hidden {
         display: none;
     }
@@ -29,3 +35,4 @@
     <slot name="SignIn/password-label"></slot>
     <slot name="SignIn/username-label"></slot>
 </div>
+<slot></slot>
