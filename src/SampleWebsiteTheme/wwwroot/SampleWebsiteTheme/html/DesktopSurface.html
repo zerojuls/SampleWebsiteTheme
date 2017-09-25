@@ -2,7 +2,7 @@
 <link rel="import" href="/sys/polymer/polymer.html" />
 
 <template>
-    <style slot="samplewebsitetheme/global-style" shim-shadowdom>
+    <style slot="samplewebsitetheme/global-style">
         html,
         body {
             font-family: "Helvetica", "Arial", sans-serif;
@@ -15,7 +15,14 @@
         .desktop-theme-button__icon {
             cursor: pointer;
         }
-        
+
+        .desktop-theme__top-leftmost a,
+        .desktop-theme__top-left a,
+        .desktop-theme__top-center a,
+        .desktop-theme__top-right a {
+            color: var(--secondary-color, #2196f3);
+        }
+
         .desktop-theme__top-right > * {
             margin-right: 5px;
         }
@@ -26,16 +33,11 @@
             padding: 0;
         }
 
+        polyfill-next-selector { content: '.desktop-theme__top-center > starcounter-include'; }/* for polyfilled browsers*/
         .desktop-theme__top-center ::slotted(starcounter-include) {
             display: flex;
             align-items: center;
-            justify-content: flex-end;   
-        }
-
-        .desktop-theme__top-center > starcounter-include {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;   
+            justify-content: flex-end;
         }
     </style>
     <template is="dom-bind">
@@ -127,30 +129,16 @@
                 align-items: center;
             }
 
+            polyfill-next-selector { content: '.desktop-theme__top-center > starcounter-include'; }/* for polyfilled browsers*/
             .desktop-theme__top-center ::slotted(starcounter-include) {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
             }
-                        
-            /** duplicated rule for polyfilled browsers */
 
-            .desktop-theme__top-center > starcounter-include {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
-
+            polyfill-next-selector { content: '.desktop-theme__top-leftmost > i, .desktop-theme__top-right > starcounter-include'; }/* for polyfilled browsers*/
             .desktop-theme__top-leftmost ::slotted(i),
             .desktop-theme__top-right ::slotted(starcounter-include) {
-                display: flex;
-                align-items: center;
-            }
-
-            /** duplicated rule for polyfilled browsers */
-
-            .desktop-theme__top-leftmost > i,
-            .desktop-theme__top-right > starcounter-include {
                 display: flex;
                 align-items: center;
             }
@@ -164,6 +152,7 @@
                 padding: 20px;
             }
 
+            polyfill-next-selector { content: '.desktop-theme__menu > *'; }/* for polyfilled browsers*/
             .desktop-theme__menu ::slotted(*) {
               width: 100%;
               height: auto;
@@ -190,67 +179,36 @@
               padding: 25px;
             }
 
-            /** duplicated rule for polyfilled browsers */
-            .desktop-theme__menu > * {
-              width: 100%;
-              height: auto;
-              transform: translateX(-150%);
-              background: #333;
-              color: aliceblue;
-              margin-top: 64px;
-              max-height: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-              bottom: 0;
-              box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-              box-sizing: border-box;
-              border-right: 1px solid #e0e0e0;
-              transform-style: preserve-3d;
-              will-change: transform;
-              transition-duration: .2s;
-              transition-timing-function: cubic-bezier(.4,0,.2,1);
-              transition-property: transform;
-              overflow: visible;
-              overflow-y: auto;
-              z-index: 5;
-              padding: 25px;
-            }
-
+            polyfill-next-selector { content: '.desktop-theme__menu > [is-visible]'; }/* for polyfilled browsers*/
             .desktop-theme__menu ::slotted([is-visible]) {
               transform: translateX(0);
             }
-
-            /** duplicated rule for polyfilled browsers */
-            .desktop-theme__menu > [is-visible] {
-              transform: translateX(0);
-            }
         </style>
-        <div class="desktop-theme">
-            <div class="desktop-theme__top">
-                <div class="desktop-theme__top-leftmost">
-                    <slot name="samplewebsitetheme/menu-button"></slot>
-                </div>
-                <div class="desktop-theme__top-main">
-                    <div class="desktop-theme__top-left">
-                        <slot name="samplewebsitetheme/topbar-left"></slot>
-                    </div>
-                    <div class="desktop-theme__top-center">
-                        <slot name="samplewebsitetheme/topbar-center"></slot>
-                    </div>
-                    <div class="desktop-theme__top-right">
-                        <slot name="samplewebsitetheme/topbar-right"></slot>
-                    </div>
-                </div>
+    <div class="desktop-theme">
+        <div class="desktop-theme__top">
+            <div class="desktop-theme__top-leftmost">
+                <slot name="samplewebsitetheme/menu-button"></slot>
             </div>
-            <div class="desktop-theme__menu">
-                <slot name="samplewebsitetheme/topbar-leftcorner"></slot>
-            </div>
-            <div class="desktop-theme__main">
-                <div class="desktop-theme__padded">
-                    <slot name="samplewebsitetheme/main"></slot>
+            <div class="desktop-theme__top-main">
+                <div class="desktop-theme__top-left">
+                    <slot name="samplewebsitetheme/topbar-left"></slot>
+                </div>
+                <div class="desktop-theme__top-center">
+                    <slot name="samplewebsitetheme/topbar-center"></slot>
+                </div>
+                <div class="desktop-theme__top-right">
+                    <slot name="samplewebsitetheme/topbar-right"></slot>
                 </div>
             </div>
         </div>
+        <div class="desktop-theme__menu">
+            <slot name="samplewebsitetheme/topbar-leftcorner"></slot>
+        </div>
+        <div class="desktop-theme__main">
+            <div class="desktop-theme__padded">
+                <slot name="samplewebsitetheme/main"></slot>
+            </div>
+        </div>
+    </div>
     </template>
 </template>
