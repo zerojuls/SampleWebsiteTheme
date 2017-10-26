@@ -138,8 +138,7 @@ namespace SampleWebsiteTheme.Api
 
         private static WebUrl CreateCatchUri(WebTemplate surface, string uri)
         {
-            var catchUri = surface.Pages.FirstOrDefault(url => url.Template.Key == surface.Key && url.Url == uri)
-                           ?? new WebUrl {Template = surface};
+            var catchUri = surface.Pages.FirstOrDefault(url => url.Url == uri) ?? new WebUrl {Template = surface};
             catchUri.Url = uri;
             catchUri.IsFinal = true;
             return catchUri;
