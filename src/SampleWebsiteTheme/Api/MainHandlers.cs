@@ -107,7 +107,7 @@ namespace SampleWebsiteTheme.Api
             }
 
             CreatePinningRule(topBarCenterBlendingPoint, "/Search");
-            CreatePinningRule(topBarCenterBlendingPoint, $"/images/partials/somethings-single-static/{concept.GetObjectID()}");
+            CreatePinningRule(topBarCenterBlendingPoint, $"/images/partials/somethings-single-static/{{{concept.GetObjectID()}}}");
             CreatePinningRule(topBarLeftBlendingPoint, "/DisplayAppTitle");
             CreatePinningRule(topBarLeftCornerBlendingPoint, "/Launchpad");
             CreatePinningRule(topBarRightBlendingPoint, "/signin/user");
