@@ -7,10 +7,35 @@
             display: flex;
             justify-content: center;
             font-family: "Helvetica", "Arial", sans-serif;
+            background-color: #3c474f;
+            color: #778899;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #778899;
+        }
+
+        .form-control {
+            color: #ffffff;
+        }
+
+        .form-control::placeholder {
+            color: #778899;
+        }
+
+        .btn {
+            color: #778899;
         }
 
         .btn-primary {
-            background-color: #0563B8;
+            background-color: #0095ff;
+            color: #ffffff;
+        }
+
+        .btn-link:hover, 
+        .btn-link:active:hover {
+            background-color: transparent;
+            color: #778899;
         }
     </style>
     <template is="dom-bind">
@@ -25,7 +50,6 @@
                 display: flex;
                 flex-flow: column;
                 align-items: center;
-                color: #eae9e5;
             }
         </style>
         <div class="login-theme">
